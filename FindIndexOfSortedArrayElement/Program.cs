@@ -62,6 +62,7 @@ namespace FindIndexOfSortedArrayElement
                 if (arr[i] == value)
                 {
                     Console.Write(i);
+                    break;
                 }
             }
 
