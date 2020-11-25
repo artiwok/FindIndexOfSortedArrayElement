@@ -40,9 +40,9 @@ namespace FindIndexOfSortedArrayElement
                 {
                     if (arr[i] > arr[j])
                     {
-                        int t = arr[i];
+                        int temp = arr[i];
                         arr[i] = arr[j];
-                        arr[j] = t;
+                        arr[j] = temp;
                     }
                 }
             }
