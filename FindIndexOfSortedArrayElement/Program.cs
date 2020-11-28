@@ -55,6 +55,8 @@ namespace FindIndexOfSortedArrayElement
 
             Console.WriteLine();
 
+            // Linear search:
+
             //Console.Write("The index of the chosen element's value in the sorted array is: ");
 
             //int res = 0;
@@ -68,6 +70,8 @@ namespace FindIndexOfSortedArrayElement
             //}
 
             //Console.Write(res);
+
+            // Binary search:
 
             int low = 0; 
             int high = arr.Length - 1; 
