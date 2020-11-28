@@ -13,7 +13,7 @@ namespace FindIndexOfSortedArrayElement
             FindIndexOfSortedArrayElement();
         }
 
-        static void FindIndexOfSortedArrayElement()
+        static int FindIndexOfSortedArrayElement()
         {
             // Array initialization and value assignment from console
 
@@ -55,18 +55,46 @@ namespace FindIndexOfSortedArrayElement
 
             Console.WriteLine();
 
-            Console.Write("The index of the chosen element's value in the sorted array is: ");
+            //Console.Write("The index of the chosen element's value in the sorted array is: ");
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i] == value)
+            //int res = 0;
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    if (arr[i] == value)
+            //    {
+            //        res = i;                
+            //        break;
+            //    }
+            //}
+
+            //Console.Write(res);
+
+            int low = 0; 
+            int high = arr.Length - 1; 
+
+            while (low <= high)
+            {                
+                int middle = low + (high - low) / 2;
+                
+                if (value < arr[middle])
                 {
-                    Console.Write(i);
-                    break;
+                    high = middle - 1;
                 }
+                else if (value > arr[middle])
+                {
+                    low = middle + 1;
+                }
+                else
+                {
+                    Console.Write($"The index of the chosen element's value in the sorted array is: {middle}");
+                    Console.WriteLine("\n");
+                    return middle;
+                }               
             }
 
-            Console.WriteLine("\n");
-        }
+            Console.WriteLine("There is no such array element index!\n");
+
+            return -1;
+        }                   
     }
 }
